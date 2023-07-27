@@ -46,6 +46,26 @@ public static void main(String[] args) {
             "Urgente: Actualice su contraseña de inmediato para mantener la seguridad de su cuenta.",
             "Estimado cliente, se ha detectado una actividad inusual en su cuenta. Inicie sesión para revisar los detalles."
         };
+          // Crear la lista con las palabras clave y sus valores de puntos
+          Map<String, Integer> phishingKeywords = new HashMap<>();
+          phishingKeywords.put("banco", 2);
+          phishingKeywords.put("contraseña", 3);
+          phishingKeywords.put("urgente", 2);
+          phishingKeywords.put("verificación de cuenta", 3);
+          phishingKeywords.put("premio", 2);
+           // Asignar un valor de punto aleatorio (1 al 3) a cada palabra
+       // Asignar un valor de punto aleatorio (1 al 3) a cada palabra
+          Random random = new Random();
+          for (String palabra : palabras) {
+              String palabraMinusculas = palabra.toLowerCase(); // Convertir a minúsculas
+              int valorAleatorio = random.nextInt(3) + 1; // Genera valores aleatorios de 1 a 3
+              phishingKeywords.put(palabraMinusculas, valorAleatorio);
+          }
+          //leyendo archivos
+  
+          // Ruta del archivo de texto a analizar
+         
+          String filePath = "src\\main\\java\\com\\mycompany\\deberphishing\\archivo.txt"
 
     }
 }
